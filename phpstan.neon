@@ -1,0 +1,31 @@
+# Start: vendor/bin/phpstan analyze
+
+includes:
+    - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
+parameters:
+    level: max
+    paths:
+        - %currentWorkingDirectory%/includes/
+        - %currentWorkingDirectory%/admin/
+        - %currentWorkingDirectory%/public/
+    excludes_analyse:
+        - %currentWorkingDirectory%/includes/vendor/
+    autoload_files:
+        # Built-in composer
+        - %currentWorkingDirectory%/includes/vendor/autoload.php
+        # Missing constants
+        - %currentWorkingDirectory%/tests/bootstrap.php
+        # Plugin stubs
+        - %currentWorkingDirectory%/tests/wc-stubs.php
+    autoload_directories:
+        - %currentWorkingDirectory%/includes/
+        - %currentWorkingDirectory%/admin/
+        - %currentWorkingDirectory%/public/
+    ignoreErrors:
+        # https://core.trac.wordpress.org/ticket/43304
+        - '/^Parameter #2 \$deprecated of function load_plugin_textdomain expects string, false given\.$/'
+        # Template context variable
+        - '/^Undefined variable: \$settings$/'
+        # PHPStan does not recognize arrays as callables
+        - '/^Parameter #2 \$function_to_add of function (add_action|add_filter) expects callable\(\): mixed, array\(mixed, mixed\) given\.$/'

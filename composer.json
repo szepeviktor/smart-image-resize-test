@@ -1,0 +1,9 @@
+{
+	"name": "nlemsieh/smart-image-resize",
+	"require": {
+		"php": "~7.1"
+	},
+	"require-dev": {
+		"szepeviktor/phpstan-wordpress": "^0.1.0"
+	}
+}
