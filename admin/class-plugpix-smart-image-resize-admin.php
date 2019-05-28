@@ -73,7 +73,7 @@ endif;
     public function settings_page()
     {
         if (!current_user_can('manage_options')) {
-            wp_die(-1);
+            wp_die('-1');
         }
         $settings = get_option('ppsir_settings');
         if (isset($_POST['save_changes'])) {

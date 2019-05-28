@@ -25,7 +25,7 @@ class Plugpix_Smart_Image_Resize_Helper
         }
         foreach ($overwrite as $key => $value) {
             if (array_key_exists($key, $original) && is_array($value)) {
-                array_overwrite($original[$key], $overwrite[$key]);
+                self::array_overwrite($original[$key], $overwrite[$key]);
             } else {
                 $original[$key] = $value;
             }

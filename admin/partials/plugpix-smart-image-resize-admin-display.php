@@ -11,9 +11,16 @@
  * @package    Plugix_Smart_Image_Resize
  * @subpackage Plugix_Smart_Image_Resize/admin/partials
  */
+
+/**
+ * Context
+ *
+ * @var array $settings
+ */
+
 ?>
 <div class="wrap">
-<h1><?php echo esc_html('Smart Image Resize for WooCommerce', 'plugpix-smart-image-resize'); ?></h1>
+<h1><?php esc_html_e('Smart Image Resize for WooCommerce', 'plugpix-smart-image-resize'); ?></h1>
 
 <h2 class="nav-tab-wrapper js-ppsir-tabs">
                 <a href="admin.php?page=plugpix-smart-image-resize&action=general_settings" class="nav-tab nav-tab-active" data-tab="general_settings"> Settings </a><a href="admin.php?page=plugpix-smart-image-resize&action=faq_support" class="nav-tab" data-tab="faq_support"> FAQ & Support </a>
